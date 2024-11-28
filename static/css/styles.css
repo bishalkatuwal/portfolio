@@ -1,0 +1,12 @@
+.nav-bar{
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    box-sizing: border-box;
+
+}
+
+.nav-link{
+    display: flex;
+    gap: 20px;
+}

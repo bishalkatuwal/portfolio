@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="container">
+    <div class="container-sm">
+        <h4>My </h4>
+        <h4>Portfolio</h4>
+
+        <p>I am a passionate web developer with a strong foundation
+            in front-end and back-end technologies. I specialize in 
+            building user-friendly, responsive websites and applications 
+            using tools like Django, Python, and modern web frameworks.
+        </p>
+        
+        <div class="btn">
+            <a href="https://github.com/bishalkatuwal" class="btn btn-primary">GitHub</a>
+            <a href="#" class="btn btn-danger">Resume</a>
+        </div>
+
+
+    </div>
+
+    <div class="profile-image">
+        <img src="{% static 'images/profile_pic.png' %}" alt="Profile Picture">
+    </div>
+
+</div>
+
+<div class="divider"></div>
+
+<style>
+.divider {
+    width: 100%;
+    border-bottom: 2px dashed #ccc; /* Dashed border */
+    margin: 20px 0;
+}
+
+
+.container {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    gap: 350px; /* Spacing between items */
+    padding: 20px; /* Prevents content from touching edges */
+    height: 80vh;
+    
+  
+   
+   
+}
+
+.profile-image img {
+    border-radius: 50%; /* Makes the image circular */
+    width: 300px; /* Sets the image size */
+    height: auto; /* Ensures aspect ratio is maintained */
+    object-fit: cover; /* Ensures the image is properly cropped */
+    border: 5px solid #ccc; /* Adds a subtle border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.profile-image img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.container-sm{
+    justify-content: center;
+    align-items: center;
+
+}
+.container-sm h4{
+
+    font-size: 80px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+
+}
+p{
+    font-size: 13px;
+    color: gray;
+    font-family: 'Courier New', Courier, monospace;
+
+
+}
+
+
+</style>
+
+
+{% endblock %}
