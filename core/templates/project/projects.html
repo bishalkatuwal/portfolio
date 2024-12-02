@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for project in object_list %}
+        <div class="col-md-4 mb-4">
+            <div class="card project-card">
+                <!-- Project Image -->
+                <img class="card-img-top" src="{{ project.project_img.url }}" alt="{{ project.title }} Image">
+
+                <!-- Card Body -->
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.descriptions|safe|truncatechars:200 }}</p>
+                    <a href="{% url 'project_detail' project.id %}" class="btn btn-primary">Continue Reading</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+  /* Basic Card Styles */
+.card {
+    margin-top: 30px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.3));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border-color: #007bff;
+}
+
+/* Card Image Styles */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Card Title Styles */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.card-title:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* Card Text Styles */
+.card-text {
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 15px;
+}
+
+.card-text:hover {
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Button Styles */
+.btn-primary {
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    border-color: #007bff;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #0056b3, #0099ff);
+    transform: scale(1.05);
+}
+
+/* Responsive Layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+}
+
+.col-md-4 {
+    flex: 1 1 calc(33.33% - 30px);
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 1 1 100%;
+    }
+}
+
+/* Padding and Margin Adjustments */
+.card-body {
+    padding: 20px;
+    padding-bottom: 25px;
+}
+
+.mb-4 {
+    margin-bottom: 30px;
+}
+
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+</style>
+
+{% endblock %}

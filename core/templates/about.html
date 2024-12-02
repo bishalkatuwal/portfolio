@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="about-page-container">
+    <div class="about-left">
+        <img src="https://scontent.fktm1-1.fna.fbcdn.net/v/t39.30808-1/461269680_122134548638333884_7438101549614668127_n.jpg?stp=dst-jpg_s200x200&_nc_cat=110&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=uGykDl9oQMIQ7kNvgGyBea7&_nc_zt=24&_nc_ht=scontent.fktm1-1.fna&_nc_gid=AG_pHpW-VwYkUR7Ltp6twEW&oh=00_AYD3nP8UdS-0NNy7FdmkXrjgZfQq84Q7COnkecn0DcEh0Q&oe=67532CAE" alt="Profile Picture">
+    </div>
+    <div class="about-right">
+        <h1>About Me</h1>
+        <p>
+            Hello! I'm a passionate developer who loves creating innovative solutions for complex problems. 
+            With experience in various technologies, I specialize in full-stack web development. 
+        </p>
+        <p>
+            In my free time, I enjoy exploring new programming tools, reading novels, and contributing to open-source projects.
+        </p>
+        <div class="social-links">
+            <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* About Page Styling */
+    .about-page-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px 20px;
+        gap: 20px;
+        background: #f9f9f9;
+    }
+
+    .about-left {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-left img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-right {
+        flex: 2;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .about-right h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .about-right p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-links a {
+        color: #007bff;
+        font-size: 1.5rem;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .social-links a:hover {
+        color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+        .about-page-container {
+            flex-direction: column;
+        }
+
+        .about-left, .about-right {
+            flex: 1 1 100%;
+            text-align: center;
+        }
+
+        .about-right {
+            padding: 20px;
+        }
+    }
+</style>
+
+{% endblock %}
+v

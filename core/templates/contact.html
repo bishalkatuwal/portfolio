@@ -1,0 +1,259 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-sm">
+
+    <div class="card" style="width: 18rem;">
+        <img src="https://scontent.fktm1-1.fna.fbcdn.net/v/t39.30808-1/461269680_122134548638333884_7438101549614668127_n.jpg?stp=dst-jpg_s200x200&_nc_cat=110&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=uGykDl9oQMIQ7kNvgGyBea7&_nc_zt=24&_nc_ht=scontent.fktm1-1.fna&_nc_gid=AemSQyY4k0QhVMqRhjHWTgs&oh=00_AYD019rFNSYIoQsrnPuzlzGMSqX3TfrpG7Uu1Ur2nsM9eA&oe=67539D2E" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bishal Katuwal</h5>
+          <p class="card-text">I’m Bishal Katuwal, a passionate tech enthusiast with a knack for solving problems and creating meaningful digital experiences</p>
+        </div>
+
+        <hr class="divider">
+
+        <div class="social-links">
+            <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <hr class="divider">
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>Email: <a href="mailto:katuwalbishal367@gmail.com">Bishalkatuwal</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>Phone: <a href="tel:+1234567890"> +977 9847393679</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Location: Kathmandu, Nepal</span>
+            </div>
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+    <div class="contact-container">
+        <h2>Let's Talk</h2>
+        <p>To request a quote or want to meet up for coffee, 
+            contact me directly or fill out the form and 
+            i will get back to you soon.
+        </p>
+        <form method="POST" class="contact-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-submit">SEND MESSAGE</button>
+        </form>
+    </div>
+    
+    
+
+</div>
+
+
+
+
+
+<style>
+
+.container-sm {
+    display: flex;
+    justify-content: center; /* Horizontally centers content */
+    align-items: flex-start; /* Aligns items to the top for better structure */
+    gap: 30px; /* Adds space between items */
+    padding: 60px;
+    flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+    max-width: 1200px; /* Maximum width for better control */
+    margin: 0 auto; /* Centers container on the page */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container-sm {
+        flex-direction: column; /* Stack items vertically on small screens */
+        padding: 20px;
+    }
+}
+
+
+.card{
+    background-color: rgb(52, 52, 110);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 20px;
+}
+
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(163, 157, 157);
+}
+
+.divider {
+    border-top: 1px solid white;
+    margin: 20px 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+.contact-info {
+    padding: 10px 20px;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.contact-item a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+
+.contact-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+   
+}
+
+/* Header styling */
+.contact-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.contact-container p{
+
+    font-size: 14px;
+    color: rgb(190, 184, 184);
+}
+/* Form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input fields styling */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    font-size: 16px;
+    background: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Textarea styling */
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Button styling */
+.btn-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: rgb(168, 2, 2);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: rgb(77, 0, 0);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .contact-container {
+        margin: 20px;
+        padding: 15px;
+    }
+    .contact-form {
+        gap: 10px;
+    }
+}
+</style>
+
+{% endblock %}
